@@ -1,5 +1,6 @@
 Description
 ===========
+
 Installs mongo shell & client packages and tools.
 
 Requirements
@@ -14,6 +15,7 @@ Other
 
 Attributes
 ==========
+
 See `attributes/default.rb` for default values
 
 Recipes
@@ -21,11 +23,10 @@ Recipes
 
 default
 -------
-
 Installs mongo shell & client packages and tools.
 
 License
 =======
-Copyright (c) Rally Software Development Corp. 2013
 
+Copyright (C) 2013 Rally Software Development Corp
 Distributed under the MIT License.

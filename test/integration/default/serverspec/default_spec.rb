@@ -7,7 +7,7 @@ describe file('/etc/yum.repos.d/10gen.repo') do
   it { should be_grouped_into 'root' }
 end
 
-describe command('/usr/bin/yum -C repolist | grep 10-gen') do
+describe command('/usr/bin/yum -C repolist | grep 10gen') do
   it { should return_stdout /10gen RPM Repository/ }
 end
 

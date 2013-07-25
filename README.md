@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/RallySoftware-cookbooks/mongodb-rally.png?branch=master)](https://travis-ci.org/RallySoftware-cookbooks/mongodb-rally)
-
 Description
 ===========
 Installs mongo shell & client packages and tools.

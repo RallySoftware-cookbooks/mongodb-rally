@@ -6,7 +6,7 @@ description      'Installs/Configures mongodb-rally'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
-recipe 'mongodb-rally::default', 'Installs mongodb-10gen packages and tools'
+recipe 'mongodb-rally::default', 'Installs mongo shell & client packages and tools'
 
 supports 'centos'
 

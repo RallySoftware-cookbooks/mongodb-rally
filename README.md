@@ -2,7 +2,7 @@
 
 Description
 ===========
-Installs mongodb-10gen packages and tools.
+Installs mongo shell & client packages and tools.
 
 Requirements
 ============
@@ -24,7 +24,7 @@ Recipes
 default
 -------
 
-Installs mongodb-10gen packages and tools.
+Installs mongo shell & client packages and tools.
 
 License
 =======

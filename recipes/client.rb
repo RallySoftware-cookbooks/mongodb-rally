@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: mongodb-rally
-# Recipe:: default
+# Recipe:: client
 #
 # Copyright (c) 2013 Rally Software Development Corp
 #
@@ -24,4 +24,14 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-include_recipe "mongodb-rally::client"
+if node['platform_family'] == 'rhel'
+    yum_repository "10gen" do
+    description "10gen RPM Repository"
+    url "http://downloads-distro.mongodb.org/repo/redhat/os/#{node['kernel']['machine']  =~ /x86_64/ ? 'x86_64' : 'i686'}"
+    action :add
+  end
+else
+  Chef::Log.warn("Adding the #{node['platform_family']} 10gen repository is not yet not supported by this cookbook")
+end
+
+package "mongo-10gen"

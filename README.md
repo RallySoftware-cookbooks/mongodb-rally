@@ -23,6 +23,10 @@ Recipes
 
 default
 -------
+Includes the client recipe by default.
+
+client
+-------
 Installs mongo shell & client packages and tools.
 
 License

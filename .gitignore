@@ -14,3 +14,6 @@ bin/*
 .bundle/*
 
 .kitchen/
+test/.chef
+vendor/
+.DS_Store

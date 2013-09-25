@@ -11,4 +11,4 @@ recipe 'mongodb-rally::client', 'Installs mongo shell & client packages and tool
 
 supports 'centos'
 
-depends 'yum'
+depends 'yum', '~> 2.3.0'

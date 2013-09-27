@@ -1,36 +1,21 @@
-Description
-===========
-
+## Description
 Installs mongo shell & client packages and tools.
 
-Requirements
-============
+## Requirements
+### Platform
+* CentOS 6.4
 
-Platform
---------
-Tested on CentOS 6.4.
-
-Other
------
-
-Attributes
-==========
-
+## Attributes
 See `attributes/default.rb` for default values
 
-Recipes
-=======
-
-default
--------
+## Recipes
+### default
 Includes the client recipe by default.
 
-client
--------
+### client
 Installs mongo shell & client packages and tools.
 
-License
-=======
-
+### License
 Copyright (C) 2013 Rally Software Development Corp
+
 Distributed under the MIT License.

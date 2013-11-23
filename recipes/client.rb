@@ -24,7 +24,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-if node['platform_family'] == 'rhel'
+if node[:platform_family] == 'rhel'
     yum_repository '10gen' do
     description '10gen RPM Repository'
     url "http://downloads-distro.mongodb.org/repo/redhat/os/#{node[:kernel][:machine]  =~ /x86_64/ ? 'x86_64' : 'i686'}"

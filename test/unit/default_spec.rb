@@ -1,17 +1,20 @@
 require_relative 'spec_helper'
 
-describe '::default' do
-  let(:chef_run) { ChefSpec::ChefRunner.new(:step_into => ['yum_repository']) }
-
-  it 'should install stable version of mongo-10gen package by default' do
-    chef_run.converge 'mongodb-rally::default'
-    expect(chef_run).to install_package 'mongo-10gen'
+describe 'mongodb-rally::default' do
+  let(:kernel) { 'x86_64' }
+  subject(:chef_run) do
+    ChefSpec::Runner.new do |node|
+      node.automatic_attrs[:platform_family] = 'rhel'
+      node.automatic_attrs[:kernel][:machine] = kernel
+    end.converge described_recipe
   end
 
-  it 'should include 10gen yum repository for mongo-10gen if the platform family is rhel' do
-    chef_run.node.automatic_attrs['platform_family'] = 'rhel'
-    chef_run.converge 'mongodb-rally::default'
-    chef_run.should create_file '/etc/yum.repos.d/10gen.repo'
-  end
+  it { should install_package 'mongo-10gen' }
 
+  it { should add_yum_repository('10gen').with(url: /redhat\/os\/x86_64/) }
+
+  context 'when i686' do
+    let(:kernel) { 'i686' }
+    it { should add_yum_repository('10gen').with(url: /redhat\/os\/i686/) }
+  end
 end
